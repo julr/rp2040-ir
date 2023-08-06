@@ -1,0 +1,11 @@
+pico_generate_pio_header(${CMAKE_PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/ws2812.pio)
+
+set(SOURCE_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/Main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/IrDecoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/LedWS2812.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/UsbDescriptors.cpp
+)
+
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${SOURCE_FILES})
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
